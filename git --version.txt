@@ -1,0 +1,156 @@
+git --version
+for viewing details
+git --global --list
+for setup:
+git --global user.name "suvetha"
+git --global user.email "rpssuvetha@gmail.com"
+git --global --list
+
+for initializing .git  at specified loc
+git init
+git status
+git init -b main-for making branch as main also,we can use git branch -M main
+
+for adding to staging area
+git add file name with extension== git add forgit.text
+
+before  adding to staging area it will be in untracked files and after adding file becomes changes to be commited for checking those we can use git status
+to unstage  and delete from git use following. even if we delte from local machine or working dir ,it will remain in git unless it it del using following command
+ git rm --cached<filename>===git rm --cached forgit.text
+git log- to see all the git commits till the step
+ 
+for commit :
+git commit -m "messege"
+ if we simply give git commit means it wont commit and display the message to enter any text
+
+[main (root-commit) c1cec5a] suve here the mess 7chars represents checksum, a fingerprint forevery commit to track and secure info with 40 chars but only we can see 1st 7 chars
+for whole char we can see by giving git log after commit
+
+
+if we edit the file it wll goback to working area,not to staging area 
+to commit that one frat we have to add in stage then only we can commit
+
+
+to know what exactly modified in the file ,use
+ git diff before adding and commiting
+
+if we want to know the changes after adding to stage,
+git diff --staged
+
+for adding all the files in the directory to staging area, we can use git add . after that we can commit all those similarly as single file commit
+git clone  repository link= for copying file to machine
+
+
+for readme file ,we are using md extension meaning MARKDOWN
+
+for seeing content -cat filename
+for seeing folders -dir
+to go to parent directory of current dir=cd ..
+for seing files-ls
+for seeing all files-ls -a
+for creating folder- mkdir foldername
+for creating file with content= echo "content">>filename
+then transferring to git -git init => creates empty git as .git
+
+if we use http link means ,it will always ask to login when we want to use GitHub and so ssh key is used for authentication
+so we are using ssh by using cmd only once 
+ssh-keygen -o
+
+
+
+cd .ssh
+ls =>we can see id_rsa.pub file which contains ssh key
+cat id_rsa.pub
+copy the key then go to sttings ssh key and gsc key ,create new ssh key with name and paste it then log in one tym
+then goto cmd and paste git remote add origin https://github.com/Suvetha1111/gitcourse.git
+
+
+after the ssh key establishment, we can simply push the further files after commiting to git by git push origin main = this is for pushing to server (origin)
+ we can also push to any other loc by changing oringin and giving specified branch
+
+tagging- to show info to user 
+annotated tagging,lightweight tagging
+
+git tag
+git tag v1.91
+git tag 
+git show tag - this will give who created tag and its time
+In Git and GitHub, tagging is used to mark specific points in the repository's history as being important. Typically, tags are used to mark release points (e.g., v1.0, v2.0, etc.). Tags are like branches, but they don’t change. Unlike branches, tags, once created, usually remain unchanged and represent a snapshot of the repository at a specific point in time.
+
+Purpose of Tagging in Git and GitHub
+Marking Releases: Tags are commonly used to mark release versions of a project. This helps in identifying stable versions of the codebase.
+
+Example: v1.0, v2.0, release-2023
+Reference Points: Tags provide an easy way to reference specific points in the repository’s history. They can be used to go back to the state of the codebase at the time the tag was created.
+
+Example: Fixing bugs in the code as it was in version v1.0
+CI/CD Integration: Tags are often used in Continuous Integration and Continuous Deployment (CI/CD) pipelines to trigger builds and deployments. This helps in automating the deployment of specific versions of the code.
+
+Example: Deploying the code tagged as v2.0 to a production environment
+Communication: Tags help in communicating important milestones to collaborators and users. For instance, a tag named v1.0-beta might indicate a beta release intended for testing.
+
+Example: v1.0-rc1 (release candidate 1)
+Types of Tags in Git
+Annotated Tags: These are stored as full objects in the Git database. They contain a tagger’s name, email, date, a tagging message, and can be signed and verified with GPG.
+
+Command: git tag -a v1.0 -m "version 1.0"
+Lightweight Tags: These are like pointers to a specific commit and do not contain any extra information.
+
+Command: git tag v1.0
+Creating and Pushing Tags
+Creating a Tag:
+
+sh
+Copy code
+# Annotated tag
+git tag -a v1.0 -m "Release version 1.0"
+
+# Lightweight tag
+git tag v1.0
+Pushing a Tag to a Remote Repository:
+
+sh
+Copy code
+git push origin v1.0
+Pushing All Tags to a Remote Repository:
+
+sh
+Copy code
+git push origin --tags
+Listing Tags:
+
+sh
+Copy code
+git tag
+Tags are essential for managing and maintaining the lifecycle of a project, making it easier to manage versions, automate deployments, and communicate important milestones.
+
+
+git log --pretty oneline - we can see commit along with its msg in oneline
+
+git remote -v - give the remote branhes name for pushing easily
+The git remote -v command is a useful tool for inspecting the remote repositories associated with your local Git repository. It helps in verifying and managing the remote URLs for fetching and pushing, which is crucial for maintaining proper workflow and collaboration in Git-based projects.
+for first time branch creation: git checkout -b branch name
+for listing all branches: git branch
+for creating branches other than 1st tym:1.git checkout branch name
+To switch b2n branches : git switch destinationbranch name
+we can create and switch to a new branch  by simply git switch -c newbranchname
+
+to see git branches:
+git branch- only loc branches
+git branch -all= remote aswellas loc
+to got back to previous branch- git switch -
+git branch -d branch name for deleting branch
+
+
+to merge branch git merge branchname
+before merging we always pull i.e., from remote to loc for that = git pull origin main
+
+
+
+
+
+
+
+
+
+ 
